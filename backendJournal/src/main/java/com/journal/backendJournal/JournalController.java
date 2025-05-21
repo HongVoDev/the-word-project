@@ -29,13 +29,6 @@ public class JournalController {
 	this.emotionAnalysisService = emotionAnalysisService;
 	}
 
-
-//	@PostMapping("/getVersesByKeywords")
-//	public List getVersesByKeyword(@RequestBody List<String> keywords) {
-//	return journalService.getVersesByKeyword(keywords);
-//	}
-//	
-
 	@PostMapping("/getVersesByEntry")
 	public List analyzeEmotion(@RequestBody String text, HttpServletRequest request) {
 	try {
@@ -46,8 +39,6 @@ public class JournalController {
 		System.out.println("--------------------------------------------------");
 		String emotion = emotionAnalysisService.analyzeEmotion(text);
 		System.out.println(" Input: " + text);
-		System.out.println(" Time (GMT-5): " + formattedTime);
-		System.out.println(" IP Address: " + ipAddress);
 		System.out.println(" Emotion: " + emotion);
 		System.out.println("--------------------------------------------------");
 		return journalService.getThreeVersesByKeyword(emotion);
