@@ -83,7 +83,7 @@ To use Watsonx.ai, you'll need an IMDB account. Details on how to set this up wi
 ## 📝 Wiki Pages
 
 Make sure to view the following pages on the wiki for more detailed information
-
+(Wikis are works in progress, these links currently don't work)
 * [Create Angular App](url_to_create_angular_app_wiki)
 * [CORS Configuration](url_to_cors_configuration_wiki)
 * [Database Setup](url_to_database_setup_wiki)
