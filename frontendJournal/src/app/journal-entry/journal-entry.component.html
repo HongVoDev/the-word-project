@@ -1,0 +1,117 @@
+<div class="container">
+  <article class="l-design-widht">
+    <div class="text-header">Read</div>
+    <div class="text-second-header">the word</div>
+    <div class="text-body">When times are hard and everything seems out of control,
+      we can turn to Jesus. Write down a few words about how
+      you are feeling, your situtation, etc. and read 
+      the verses generated specifically for you
+    </div>
+    <div class="card card--accent">
+      <h3>
+        <svg
+          style="vertical-align: middle;"
+          height="5%"
+          width="5%"
+          version="1.1"
+          id="_x32_"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="-51.2 -51.2 614.40 614.40"
+          xml:space="preserve"
+          fill="#6ab1c9"
+          stroke="#6ab1c9"
+          stroke-width="0.00512"
+          transform="rotate(0)"
+          >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="5.12"></g>
+          <g id="SVGRepo_iconCarrier">
+            <style type="text/css">
+              .st0 {
+              fill: #6ab1c9;
+              }
+            </style>
+            <g>
+              <polygon class="st0" points="304,154.664 304,0 208,0 208,154.664 56,154.664 56,250.664 208,250.664 208,512 304,512 304,250.664 456,250.664 456,154.664 "></polygon>
+            </g>
+          </g>
+        </svg>
+        How are you feeling?
+      </h3>
+      <label class="input">
+      <input class="input__field" type="text" placeholder=" " [(ngModel)]="journalEntry" (input)="resetNoFound()"/>
+      <span class="input__label">Journal Entry</span>
+      </label>
+      <div class="button-group">
+        <button class="button-input" (click)="onSubmit($event)" 
+        [disabled]="loading || journalEntry == ''">Send</button>
+        <button type="reset" (click)="clearInput()">Reset</button>
+      </div>
+    </div>
+    <div class="accordion">
+      <details>
+        <summary>What should I type?</summary>
+        <div class="example" 
+        style="padding-bottom: 1%; font-size: 1rem;">
+        You can type in your thoughts, feelings, an emotional event or situation, 
+          whatever it is that you need encouragement for.</div>
+        <div class="example"><i>Ex. 1. Sad</i></div>
+        <div class="example"><i>Ex. 2. I'm thankful for God</i></div>
+        <div class="example"><i>Ex. 3. I have a lot going on in my mind</i></div>
+      </details>
+    </div>
+  </article>
+  <div class="verses-display" *ngIf="verses.length > 0">
+    <br />
+    <h2>Related Verses</h2>
+    <ul>
+      <li *ngFor="let verse of verses">
+        <br />
+        <body>
+          <div class="btn-bg bg-1">
+            <div class="btn btn-1">
+              <button href="verse.link">
+              <a [href]="verse.link" target="_blank" title="Click to view"> {{ verse.verse }} - {{ verse.place }}</a>
+              </button>
+            </div>
+          </div>
+        </body>
+      </li>
+      <br />
+    </ul>
+  </div>
+  <br />
+  <div *ngIf="loading" class="loading-indicator-position">
+    <div class="loading-indicator">Loading...</div>
+  </div>
+  <br />
+  <br />
+  <div *ngIf="verses.length === 0 && !loading && noFound && journalEntry !== ''" class="no-results">
+    <br />
+    <div class="no-results-text">No verses found for your entry.</div>
+    <br />
+  </div>
+  <br />
+  <br />  
+
+    <details style="position: fixed; bottom: 0; margin-bottom: 0; background-color: #6ab1c9; left: 0;">
+    <summary class="accordion-2 details-2" style="color: white; 
+    font-family: playwrite; width: 100vw;">A word from the developer</summary>
+   <br>
+      <div class="note fade-in">Hi. My name is Hong, I created this website using
+         <span class="inner-text">NLP</span> <br>
+        (Natural language processing), a branch of 
+        <span class="inner-text">
+          AI</span> to analyze text and detect emotions.<br>
+    My goal is to uplift others when they are overwhelmed with emotions using the word of 
+    God and help<br>others understand that Jesus is near to us at all times. 
+    I'm thankful to be blessed with the skillset to be able to make this<br> 
+    happened and I would love to contribute my skills as a software engineer 
+     to a challenging and rewarding role.<br>I'm currently seeking a Software Engineer (mid-level) position
+     in Northwest Arkansas or a remote opportunity.<br>If you're aware
+     of any potential openings that might align with my skillset, or simply<br>
+      want to connect, you can do so through my 
+      <a href="https://linkedin.com/in/hongvodev" target="_blank">LinkedIn</a>.</div><br>
+  
+  </details>

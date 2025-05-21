@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    transition: background-color 1s, color 1s;
+  }
+  
+  body.dark-mode {
+    background-color: #282828;
+    color: #eee;
+  }
+
+  .dark-mode .text-header{
+	color: #FDFDFD !important;
+}
+.dark-mode .text-second-header{
+	color: #FDFDFD !important;
+}
+.dark-mode .text-body{
+	color: #FDFDFD !important;
+}
+
+.dark-mode .example{
+	color: #FDFDFD !important;
+}
